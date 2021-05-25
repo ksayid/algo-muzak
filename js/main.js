@@ -1,5 +1,3 @@
-// https://setosa.io/markov/index.html#%7B%22tm%22%3A%5B%5B0.5%2C0.5%2C0%5D%2C%5B0.75%2C0.25%2C0%5D%2C%5B1%2C0%2C0%5D%5D%7D
-
 const delayStart = 1
 const tempo = 175
 const beat = 60 / tempo
@@ -88,10 +86,9 @@ function getRandomInt(min, max){
 // To visualize the markov chain:
 // https://setosa.io/markov/index.html#%7B%22tm%22%3A%5B%5B0%2C0.5%2C0.33%2C0%2C0%2C0.17%2C0%5D%2C%5B0.29%2C0%2C0.29%2C0.42%2C0%2C0%2C0%5D%2C%5B0.2%2C0.4%2C0%2C0%2C0.4%2C0%2C0%5D%2C%5B0%2C1%2C0%2C0%2C0%2C0%2C0%5D%2C%5B0.33%2C0%2C0.67%2C0%2C0%2C0%2C0%5D%2C%5B0%2C0%2C0%2C0%2C0%2C0%2C1%5D%2C%5B0%2C0%2C0%2C0%2C1%2C0%2C0%5D%5D%7D    
 // The idea of a markov chain is that the value in a sequence only depends on its previous value. 
-// Suppose our chain starts with G.  The note G appears 6 times in my riff I'm using above. 4/6 times, the note F# follows right after (1/6 times A and 1/6 D follow).
+// Suppose our chain starts with G.  The note G appears 6 times in my riff I'm using above. 
+// 4/6 times, the note F# follows right after (1/6 times A and 1/6 D follow).
 // So, 67% of the time, after a G, we should draw an F#. I use this logic to produce the function below.
-
-
 // https://i.imgur.com/KqHlvZp.png
 // For more info: https://shiffman.net/a2z/markov/
 async function markovSampler(){
